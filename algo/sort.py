@@ -17,27 +17,23 @@ class Sort:
 
     @staticmethod
     def bubble_sort(l):
-        for j in range(3):
+        isSorted = False
+
+        while not isSorted:
+            swapNums = 0
+
             for i in range(0, len(l) - 1):
-                if l[i] > l[i+1]:
+                n1 = l[i]
+                n2 = l[i+1]
+
+                if n2 < n1:
                     tmp = l[i]
                     l[i] = l[i+1]
                     l[i+1] = tmp
-                    op = True
-
-        """sorted = False
-        op = False
-
-        while sorted:
-            for i in range(0, len(l) - 1):
-                if l[i] < l[i+1]:
-                    tmp = l[i]
-                    l[i] = l[i+1]
-                    l[i+1] = tmp
-                    op = True
-
-            if not op:
-                sorted = True"""
+                    swapNums += 1
+            
+            if swapNums == 0:
+                isSorted = True     # ceci arrétera la boucle
 
     @staticmethod
     def insertion_sort(l):
